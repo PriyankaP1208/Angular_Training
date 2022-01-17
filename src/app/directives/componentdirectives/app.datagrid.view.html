@@ -1,0 +1,39 @@
+<div class="container" *ngIf="DataSource.length === 0">
+    <strong>No record to Display</strong>
+</div>
+
+<table class="table table-bordered table-striped" *ngIf="DataSource.length>0">
+    <thead>
+        <tr>
+            <th *ngFor="let col of columnHeaders">{{col}} 
+                <button class="arrow up" (click)="sortAsc(col)"></button>
+                    <button class="arrow down"></button>
+                <!-- <span><button class="arrow down"></button></span> -->
+            </th>
+        </tr>  
+    </thead>
+    <tbody>
+        <!--The [setColor] is a directive that is applied on Table Row-->
+         <tr *ngFor="let data of DataSource" (click)="onRowClick(data)">
+          <td *ngFor="let col of columnHeaders">{{data[col]}}</td>
+          <td><button class="btn-danger" (click)="deleteRowData(data.id)">Delete</button></td>
+         </tr> 
+    </tbody>
+</table>
+<style>
+   .arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+</style>
