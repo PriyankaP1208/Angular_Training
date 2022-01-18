@@ -39,7 +39,7 @@ export class DataGridComponent{
     
 
     deleteRowData(id: any): void{
-        this.dataSource.splice(id, 1);
+        this.dataSource.splice(id,1);
     }
 
     // Method bind with UI on Child 

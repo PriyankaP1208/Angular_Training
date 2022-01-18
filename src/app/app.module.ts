@@ -8,18 +8,19 @@ import { AppComponent } from './app.component';
 import {ProductComponent} from './components/productcomponent/app.product.component';
 import {DataGridComponent} from './directives/componentdirectives/app.datagrid.component';
 import { ValidateDirective } from './directives/attibutedirective/app.validation.directive';
+import { ProductFormComponent } from './components/productformcomponent/app.productform.component';
 //import { ColorDirective } from './directives/attibutedirective/app.color.directive';
 //import { ProductFormComponent } from './components/productformcomponent/app.productform.component';
 
 @NgModule({
   declarations: [
-    AppComponent,ProductComponent, DataGridComponent, ValidateDirective
+    AppComponent,ProductComponent, DataGridComponent, ValidateDirective,ProductFormComponent
   ],
   imports: [
-    BrowserModule, FormsModule,
+    BrowserModule, FormsModule,ReactiveFormsModule,
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [ProductComponent]
+  bootstrap: [ProductFormComponent]
 })
 export class AppModule { }
